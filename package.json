@@ -1,0 +1,25 @@
+{
+  "name": "fmqbo-exporter",
+  "version": "1.0.0",
+  "description": "export data from as a csv",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec 'micro'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geistinteractive/fmqbo-exporter.git"
+  },
+  "author": "Todd Geist <todd@geistinteractive.com> (http://www.geisintertactive.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geistinteractive/fmqbo-exporter/issues"
+  },
+  "homepage": "https://github.com/geistinteractive/fmqbo-exporter#readme",
+  "dependencies": {
+    "json2csv": "^3.7.3",
+    "micro": "^6.1.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  }
+}
