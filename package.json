@@ -4,7 +4,9 @@
   "description": "export data from as a csv",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec 'micro'"
+    "now-start": "micro index.js",
+    "start": "nodemon --exec 'micro'",
+    "deploy" : "now --alias exportcsv.fmqbo.com"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "dependencies": {
     "json2csv": "^3.7.3",
     "micro": "^6.1.0",
+    "querystring": "^0.2.0",
     "request": "^2.79.0",
     "request-promise": "^4.1.1"
   }

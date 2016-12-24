@@ -1,6 +1,7 @@
 'use strict';
 
 const rp = require('request-promise');
+const QBOSchema = require('./QBOSchema')
 
 
 
@@ -30,16 +31,17 @@ module.exports = (apiKey) => {
         .then(result=>{
           if (result.length === max) {
             start += max;
+
             return get(start, max);
           } else {
             //done
             return all;
           }
         })
-    }
+    };
 
 
-    return get(1, 500)
+    return get(1, 1000)
 
   };
 
@@ -55,27 +57,11 @@ module.exports = (apiKey) => {
     json : true
   });
 
-  return {
-    Items : ()=>{
-      return getAll('Select * From Item', (response=>{
-        return response.QueryResponse.Item
+  return (Entity)=>{
+      return getAll(QBOSchema.select(Entity), (response=>{
+        return response.QueryResponse[Entity]
       }))
-    },
-
-    Customers : ()=>{
-      return getAll('Select * From Customer', (response=>{
-        return response.QueryResponse.Customer
-      }))
-    },
-
-    Accounts : ()=>{
-      return getAll('Select * From Account', (response=>{
-        return response.QueryResponse.Account
-      }))
-    },
-
-  }
-
+    }
 
 
 };
