@@ -5,7 +5,7 @@
 const json2CSV = require('json2csv');
 
 const fields = {
-  Item : ['Name', 'Description', 'Active', 'Taxable', 'UnitPrice', 'Type' ],
+  Item : ['Id', 'Name', 'Description', 'Active', 'Taxable', 'UnitPrice', 'Type' ],
   Customer : ['Taxable','Job','Balance','Id','FullyQualifiedName','DisplayName','PrintOnCheckName','Active','GivenName','FamilyName','CompanyName','Title'],
   Term : ['Id', 'Name', 'Active','DiscountPercent','DueDays','DiscountDays' ],
   Invoice : ['Id', 'DocNumber' ]
